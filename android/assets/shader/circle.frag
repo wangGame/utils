@@ -13,16 +13,15 @@ uniform float u_origin_begin_u;
 uniform float u_origin_begin_v;
 uniform float u_scale;
 uniform float v_scale;
+uniform float v_x;
+uniform float v_y;
 
 
 void main() {
     vec4 tempColor;
-    vec2 v_textCoords2 = vec2((v_textCoords.x)/u_scale,(v_textCoords.y)/v_scale);
-    if(v_textCoords2.x>1.0 || v_textCoords2.y>1.0 || v_textCoords2.x<0.0 || v_textCoords2.y<0.0){
-        tempColor = vec4(0.0,0.0,0.0,0.0);
-    }else{
+    vec2 v_textCoords2 = vec2((v_textCoords.x-v_x)/u_scale,(v_textCoords.y-v_y)/v_scale);
         tempColor = texture2D(u_texture2,v_textCoords2);
-    }
+
 	vec4 color = v_color* texture2D(u_texture, v_textCoords);
 	gl_FragColor = color;
 	gl_FragColor.a = color.a* tempColor.a;
