@@ -32,21 +32,23 @@ public class Kouchu extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         batch.flush();
+
         batch.setShader(shader);
         shader.begin();
         Gdx.gl.glActiveTexture(GL20.GL_TEXTURE1);
         other.bind();
         shader.setUniformi("u_texture2",1);
         // kuan
-        shader.setUniformf("u_scale",(float) other.getWidth()/region.getRegionWidth());
-        shader.setUniformf("v_scale",(float) other.getHeight()/region.getRegionHeight());
-        shader.setUniformf("v_x",100.0F*i1 / region.getTexture().getWidth());
-        shader.setUniformf("v_y",100.0F*i / region.getTexture().getHeight());
+        shader.setUniformf("u_scale",(float) other.getWidth()/region.getTexture().getWidth());
+        shader.setUniformf("v_scale",(float) other.getHeight()/region.getTexture().getHeight());
+        shader.setUniformf("v_x",100.0F*i1 /region.getTexture().getWidth());
+        shader.setUniformf("v_y",100.0F*i /region.getTexture().getHeight());
+
+
         Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
         region.getTexture().bind();
-        batch.draw(region,100,0,0,0,region.getRegionWidth(),
-                region.getRegionHeight(),1,1,1);
-        System.out.println(getX()+"=============="+getY());
+        batch.draw(region,getX(),getY(),0,0,region.getRegionWidth(),
+                region.getRegionHeight(),getScaleX(),getScaleY(),1);
         batch.flush();
         shader.end();
         batch.setShader(null);
