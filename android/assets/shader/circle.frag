@@ -21,8 +21,8 @@ void main() {
     vec4 tempColor;
     vec2 v_textCoords2 = vec2((v_textCoords.x-v_x)/u_scale,(v_textCoords.y-v_y)/v_scale);
     if(v_textCoords2.x>=1.0 || v_textCoords2.y>=1.0 || v_textCoords2.x<=0.0 || v_textCoords2.y<=0.0){
-        tempColor = vec4(0.0,0.0,0.0,0.0);
-    }else{
+        tempColor = vec4(1.0,1.0,1.0,0.0);
+    }else if(v_textCoords2.x<10.0){
         tempColor = texture2D(u_texture2,v_textCoords2);
     }
 	vec4 color = v_color* texture2D(u_texture, v_textCoords);

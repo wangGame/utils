@@ -5,7 +5,7 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.demo.MainGame;
-import com.demo.shader.Shader;
+import com.demo.view.GameView;
 
 public class GameScreen implements Screen {
     private Stage stage;
@@ -19,10 +19,12 @@ public class GameScreen implements Screen {
 
     @Override
     public void show() {
-//        GameView view = new GameView();
-//        stage.addActor(view);
-        Shader shader = new Shader();
-        stage.addActor(shader);
+        GameView view = new GameView();
+        stage.addActor(view);
+//        TextureRegion region =  new TextureRegion(new Texture("1.png"));
+//        TextureRegion[][] split = region.split(100, 100);
+//        Shader shader = new Shader(split[0][0]);
+//        stage.addActor(shader);
     }
 
     @Override

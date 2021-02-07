@@ -25,7 +25,7 @@ public class Kouchu extends Actor {
         shader = new ShaderProgram(
                 Gdx.files.internal("shader/circle.vert"),
                 Gdx.files.internal("shader/circle.frag"));
-        other =new Texture("4.png");
+        other =new Texture("0000.png");
         setSize(region.getRegionWidth(),region.getRegionHeight());  //white_circle
     }
 
@@ -42,7 +42,6 @@ public class Kouchu extends Actor {
         shader.setUniformf("v_scale",(float) other.getHeight()/region.getTexture().getHeight());
         shader.setUniformf("v_x",100.0F*i1 /region.getTexture().getWidth());
         shader.setUniformf("v_y",100.0F*i /region.getTexture().getHeight());
-
 
         Gdx.gl.glActiveTexture(GL20.GL_TEXTURE0);
         region.getTexture().bind();

@@ -26,8 +26,8 @@ public class PolyShowShape extends Group {
         int idx = this.idx;
 
         for (float i = 0; i <= 360; i=i+0.5F) {
-            vertices[idx ++] = (float) (100+ 100*Math.sin(i));
-            vertices[idx ++] = (float) (100+ 100*Math.cos(i));
+            vertices[idx ++] = (float) (120+ 100*Math.sin(i));
+            vertices[idx ++] = (float) (120+ 100*Math.cos(i));
         }
         vertices[idx++] = 100;
         vertices[idx++] = 100;
@@ -43,7 +43,8 @@ public class PolyShowShape extends Group {
 //        Image image = new Image(new TextureRegion(sprite));
 //        addActor();
         polygonSpriteBatch = new PolygonSpriteBatch();
-        sprite.setPosition(100,100);
+
+        sprite.setPosition(-20,-20);
     }
 
     public void draw(Batch batch, float parentAlpha) {

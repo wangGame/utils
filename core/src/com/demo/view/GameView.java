@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.demo.demo.Kouchu;
 
 public class GameView extends Group {
     TextureRegion[][] split;
@@ -14,10 +15,10 @@ public class GameView extends Group {
 //        PolyShowShape demo01 = new PolyShowShape();
 //        addActor(demo01);
 
-        TextureRegion region = new TextureRegion( new Texture("1.jpg"));
-//        Image image = new Image(region);
-//        addActor(image);
-        split = region.split(100, 100);
+//        TextureRegion region = new TextureRegion( new Texture("1.jpg"));
+////        Image image = new Image(region);
+////        addActor(image);
+//        split = region.split(300, 300);
 //        Kouchu demo02 = new Kouchu(region);
 //
 //        addActor(demo02);
@@ -44,26 +45,31 @@ public class GameView extends Group {
 
 
 //        region.setRegion(200,200,200,200);
-//        Kouchu demo03 = new Kouchu(region);
-//        addActor(demo03);
 //        ShowGray gray = new ShowGray();
 //        addActor(gray);
+
+
+
+        TextureRegion region = new TextureRegion( new Texture("1.jpg"));
+        split = region.split(150, 150);
+        Kouchu demo03 = new Kouchu(split[1][0],1,0);
+        addActor(demo03);
     }
 
     @Override
     public void draw(Batch batch, float parentAlpha) {
         super.draw(batch, parentAlpha);
-        int i=0;
-        int j = 0;
-
-        for (TextureRegion[] textureRegions : split) {
-            i++;
-            j=0;
-            for (TextureRegion textureRegion : textureRegions) {
-                j++;
-                batch.draw(textureRegion,i*100,j*100);
-            }
-        }
+//        int i=0;
+//        int j = 0;
+//
+//        for (TextureRegion[] textureRegions : split) {
+//            i++;
+//            j=0;
+//            for (TextureRegion textureRegion : textureRegions) {
+//                j++;
+////                batch.draw(textureRegion,i*100,j*100);
+//            }
+//        }
 
     }
 }
