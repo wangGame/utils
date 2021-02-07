@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Group;
-import com.demo.demo.Kouchu;
 
 public class GameView extends Group {
     TextureRegion[][] split;
@@ -33,14 +32,14 @@ public class GameView extends Group {
 
         int index = 0;
 
-        for (int i = 0; i < split.length; i++) {
-            for (int i1 = 0; i1 < split[0].length; i1++) {
-                Kouchu demo02 = new Kouchu(region,i,i1);
-                demo02.setPosition(0,0);
-                addActor(demo02);
-                index++;
-            }
-        }
+//        for (int i = 0; i < split.length; i++) {
+//            for (int i1 = 0; i1 < split[0].length; i1++) {
+//                Kouchu demo02 = new Kouchu(region,i,i1);
+//                demo02.setPosition(0,0);
+//                addActor(demo02);
+//                index++;
+//            }
+//        }
 
 
 

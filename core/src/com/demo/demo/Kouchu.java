@@ -32,7 +32,6 @@ public class Kouchu extends Actor {
     @Override
     public void draw(Batch batch, float parentAlpha) {
         batch.flush();
-
         batch.setShader(shader);
         shader.begin();
         Gdx.gl.glActiveTexture(GL20.GL_TEXTURE1);
